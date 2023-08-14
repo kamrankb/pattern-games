@@ -21,12 +21,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $data = array(
-            "name" => 'Fish',
-            "price" => 20
-        );
-
-        return $this->order->create($data);
+        return response()->json($this->order->getAll());
     }
 
     /**
@@ -36,7 +31,12 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $data = array(
+            "name" => 'Fish',
+            "price" => 20
+        );
+
+        return $this->order->create($data);
     }
 
     /**
